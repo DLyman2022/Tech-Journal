@@ -7,9 +7,8 @@ sudo useradd -m -d /home/$1 -s /bin/bash $1
 echo "$1 created"
 sudo mkdir /home/$1/.ssh
 echo "Directory Created"
-ssh-keygen -t rsa -C "$1"
-sudo cp ~/.ssh/id_rsa.pub .
-sudo cp centos7/id_rsa.pub /home/$1/.ssh/authorized_keys
+
+sudo cp SYS265_20/linux/public-keys/id_rsa.pub /home/$1/.ssh/authorized_keys
 sudo chmod 700 /home/$1/.ssh
 sudo chmod 600 /home/$1/.ssh/authorized_keys
 sudo chown -R $1:$1 /home/$1/.ssh
